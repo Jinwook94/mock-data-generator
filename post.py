@@ -140,3 +140,5 @@ for i, (key, value) in enumerate(time_dict.items(), start=1):
 table.add_row(["-" * 4, "-" * 40, "-" * 9])
 table.add_row(['합계', '', f"{end_time - mock_start_time:.2f}"])
 print(table)
+
+# TEST

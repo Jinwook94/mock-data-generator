@@ -9,9 +9,10 @@ def get_db_connection():
             host=config('DB_HOST'),
             port=config('DB_PORT'),
             user=config('DB_USER'),
-            password=config('DB_password'),
+            password=config('DB_PASSWORD'),
             database=db_name
         )
+        print("DB 연결 완료")
         return mydb
     except Exception as e:
         print(f"DB 연결 실패 : {e}")

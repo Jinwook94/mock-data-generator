@@ -7,11 +7,12 @@ from prettytable import PrettyTable
 
 # Elasticsearch 클라이언트 설정
 es = Elasticsearch(
-    [{
-        'host': config('ES_HOST'),
-        'port': config('ES_PORT', default=9200, cast=int),
-        'scheme': "http",
-    }]
+    hosts=[{
+        "host": config('ES_HOST'),
+        "port": config('ES_PORT', default=9200, cast=int),
+        "scheme": "http"  # Include scheme here
+    }],
+    http_auth=(config('ES_USERNAME'), config('ES_PASSWORD'))
 )
 
 # MariaDB 연결

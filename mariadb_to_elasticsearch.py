@@ -10,7 +10,7 @@ es = Elasticsearch(
     hosts=[{
         "host": config('ES_HOST'),
         "port": config('ES_PORT', default=9200, cast=int),
-        "scheme": "http"  # Include scheme here
+        "scheme": "http"
     }],
     http_auth=(config('ES_USERNAME'), config('ES_PASSWORD'))
 )
